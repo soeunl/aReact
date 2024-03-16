@@ -3,17 +3,33 @@ import React, { useState } from 'react'
 import './Tabs.css'
 import TabBtn from './TabBtn'
 
-const Tabs = () => {
+const Tabs = ({ tabDatas }) => {
     const [num, setNum] = useState(1)
     // 1, 2, 3, 4
     return (
         <div className="tabs-container">
             <ul className="tab-btns">
-                {[1, 2, 3, 4].map((btn, index) => (
-                    <TabBtn num={num} setNum={setNum} index={index} btn={btn} />
+                {tabDatas.map((tab, index) => (
+                    <li
+                        onClick={() => {
+                            setNum(index + 1)
+                        }}
+                        className={num === tab.id ? 'active' : ''}
+                    >
+                        {tab.btn_title}
+                    </li>
                 ))}
             </ul>
             <div className="tab-contents">
+                {tabDatas.map((content) => (
+                    <div
+                        style={{
+                            display: num === content.id ? 'block' : 'none',
+                        }}
+                    >
+                        {content.body}
+                    </div>
+                ))}
                 <div style={{ display: num === 1 ? 'block' : 'none' }}>
                     문서 디자인에 의미가 있는 글을 담으면 사람들은 양식을 보지
                     않고 글의 내용에 집중하는 경향이 있다.
