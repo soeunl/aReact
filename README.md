@@ -1,11 +1,11 @@
 # nodejs 프로젝트 작업하려면
 
-일일이 여러분들이 모두 작업
+모두 작업
 src : 노드의 views: \*.html, public: script, css 폴더
 jQuery같은 라이브러리
 파일명.js $('div')
 
-# 리엑트 파일
+# 리액트 파일
 
 src : _.js, _.jsx (JavaScript Xml. javascript html로 생각하면 된다)
 클래스형 컴포넌트 => 함수형 컴포넌트
